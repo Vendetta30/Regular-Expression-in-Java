@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Introduction to Regular Expression</title>
+    
+    <meta name="layout" content="main"/>
+    
+    <style>
+    .modal-dialog {
+        width: 1200px !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    .modal-content {
+        height: auto;
+        min-height: 100%;
+        border-radius: 0;
+    }
+    </style>
+
+    <link rel="stylesheet"
+          href="../static/theme/bower_components/bootstrap/dist/css/bootstrap.min.css"
+          type="text/css">
+    <link rel="stylesheet" href="../static/theme/bower_components/metisMenu/dist/metisMenu.min.css"
+          type="text/css">
+    <link rel="stylesheet" href="../static/theme/dist/css/timeline.css" type="text/css">
+    <link rel="stylesheet" href="../static/theme/dist/css/sb-admin-2.css" type="text/css">
+    <link rel="stylesheet"
+          href="../static/theme/bower_components/font-awesome/css/font-awesome.min.css"
+          type="text/css">
+</head>
+
+<body>
+<div id="wrapper">
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../index.html">Regular Expression</a>
+        </div>
+        <ul class="nav navbar-top-links navbar-right">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="chapterFive.html#">
+                    <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="http://localhost:8080/session/logout/index"><i
+                            class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <a href="../index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="chapterFive.html#"><i class="fa fa-book fa-fw"></i> Reference<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="../character/index.html">Character Classes</a>
+                            </li>
+                            <li>
+                                <a href="../anchor/index.html">Anchors</a>
+                            </li>
+                            <li>
+                                <a href="../escape/index.html">Escaped Characters</a>
+                            </li>
+                            <li>
+                                <a href="../groupLookaround/index.html">Groups & Lookaround</a>
+                            </li>
+                            <li>
+                                <a href="../qualtifierAlternation/index.html">Qualtifiers & Alternation</a>
+                            </li>
+                            <li>
+                                <a href="../substitution/index.html">Substitution</a>
+                            </li>
+                            <li>
+                                <a href="../flags/index.html">Flags</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="chapterFive.html#"><i class="fa fa-file-o fa-fw"></i> CheatSheet<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="../cheatSheet/index.html">Regular Expression Syntax</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="../example/index.html">
+                            <i class="fa fa-lightbulb-o fa-fw"></i> Examples<span class="fa arrow"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../regexCheck/testRegexValidation.html">
+                            <i class="fa fa-life-saver fa-fw"></i> Test Regex<span class="fa arrow"></span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="chapterFive.html#"><i class="fa fa-ambulance fa-fw"></i> Chapter<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="index.html">Regular Expression</a>
+                            </li>
+                            <li>
+                                <a href="chapterOne.html">Character Class</a>
+                            </li>
+                            <li>
+                                <a href="chapterTwo.html">Predefined Character Class</a>
+                            </li>
+                            <li>
+                                <a href="chapterThree.html">Quantifiers</a>
+                            </li>
+                            <li>
+                                <a href="chapterFour.html">Capturing Groups</a>
+                            </li>
+                            <li>
+                                <a href="chapterFive.html">Boundary Matchers</a>
+                            </li>
+                            <li>
+                                <a href="chapterSix.html">Capturing Groups and Character Classes with Quantifiers</a>
+                            </li>
+                            <li>
+                                <a href="chapterSeven.html">LookAround</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Boundary Matchers</h1>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-code fa-fw"></i> Boundary Matcher
+                </div>
+
+                <div class="panel-body">
+                    Until now, we've only been interested in whether or not a match is found at some location within a particular input string.<br/> We never cared about where in the string the match was taking place.
+                You can make your pattern matches more precise by specifying such information with boundary matchers. For example, maybe you're interested in finding a particular word, but only if it appears at the beginning or end of a line. Or maybe you want to know if the match is taking place on a word boundary, or at the end of the previous match.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-check fa-fw"></i> The following table lists and explains all the boundary matchers.
+                </div>
+
+                <div class="panel-body">
+                    <table class="table table-striped" border="1" summary="a description of all boundary matchers">
+                        <tr>
+                            <th id="h1">Boundary Construct</th>
+                            <th id="h2">Description</th>
+                        </tr>
+                        <tr>
+                            <td headers="h1"><code>^</code></td>
+                            <td headers="h2">The beginning of a line</td>
+                        </tr>
+                        <tr>
+                            <td headers="h1"><code>$</code></td>
+                            <td headers="h2">The end of a line</td>
+                        </tr>
+                        <tr>
+                            <td headers="h1"><code>\b</code></td>
+                            <td headers="h2">A word boundary</td>
+                        </tr>
+                        <tr>
+                            <td headers="h1"><code>\B</code></td>
+                            <td headers="h2">A non-word boundary</td>
+                        </tr>
+                        <tr>
+                            <td headers="h1"><code>\A</code></td>
+                            <td headers="h2">The beginning of the input</td>
+                        </tr>
+                        <tr>
+                            <td headers="h1"><code>\G</code></td>
+                            <td headers="h2">The end of the previous match</td>
+                        </tr>
+                        <tr>
+                            <td headers="h1"><code>\Z</code></td>
+                            <td headers="h2">The end of the input but for the final terminator, if any</td>
+                        </tr>
+                        <tr>
+                            <td headers="h1"><code>\z</code></td>
+                            <td headers="h2">The end of the input</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <a href="chapterFour.html"
+               class="btn btn-warning btn-lg">Prev</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                Practice
+            </button>
+
+        </div>
+
+        <div class="col-md-4 text-center">
+            <a href="chapterSix.html"
+               class="btn btn-success btn-lg">Next</a>
+        </div>
+    </div>
+    <br/><br/>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Practice Example</h4>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <i class="fa fa-question fa-fw"></i> ^ and $.
+                                </div>
+
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            Enter your regex: ^dog$<br/>
+                                            Enter input string to search: dog<br/>
+                                            I found the text "dog" starting at index 0 and ending at index 3.<br/>
+                                            <br/>
+                                            Enter your regex: ^dog$<br/>
+                                            Enter input string to search:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dog<br/>
+                                            No match found.<br/>
+
+                                            Enter your regex: \s*dog$<br/>
+                                            Enter input string to search:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dog<br/>
+                                            I found the text "            dog" starting at index 0 and ending at index 15.<br/>
+
+                                            Enter your regex: ^dog\w*<br/>
+                                            Enter input string to search: dogblahblah<br/>
+                                            I found the text "dogblahblah" starting at index 0 and ending at index 11.<br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <i class="fa fa-question fa-fw"></i> \b
+                                </div>
+
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            Enter your regex: \bdog\b<br/>
+                                            Enter input string to search: The dog plays in the yard.<br/>
+                                            I found the text "dog" starting at index 4 and ending at index 7.<br/>
+                                            <br/>
+                                            Enter your regex: \bdog\b<br/>
+                                            Enter input string to search: The doggie plays in the yard.<br/>
+                                            No match found.<br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <i class="fa fa-question fa-fw"></i> \B
+                                </div>
+
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            Enter your regex: \bdog\B<br/>
+                                            Enter input string to search: The dog plays in the yard.<br/>
+                                            No match found.<br/>
+                                            <br/>
+                                            Enter your regex: \bdog\B<br/>
+                                            Enter input string to search: The doggie plays in the yard.<br/>
+                                            I found the text "dog" starting at index 4 and ending at index 7.<br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <i class="fa fa-question fa-fw"></i> \G:
+                                </div>
+
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            Enter your regex: dog<br/>
+                                            Enter input string to search: dog dog<br/>
+                                            I found the text "dog" starting at index 0 and ending at index 3.<br/>
+                                            I found the text "dog" starting at index 4 and ending at index 7.<br/>
+                                            <br/>
+                                            Enter your regex: \Gdog<br/>
+                                            Enter input string to search: dog dog<br/>
+                                            I found the text "dog" starting at index 0 and ending at index 3.<br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+</div>
+
+</div>
+<script src="../static/theme/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../static/theme/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../static/theme/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+<script src="../static/theme/bower_components/raphael/raphael-min.js"></script>
+<script src="../static/theme/dist/js/sb-admin-2.js"></script>
+</body>
+</html>

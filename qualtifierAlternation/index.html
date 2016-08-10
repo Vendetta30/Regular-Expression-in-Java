@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Quantifiers & Alternation</title>
+    
+    <meta name="layout" content="main"/>
+    
+
+    <link rel="stylesheet"
+          href="../static/theme/bower_components/bootstrap/dist/css/bootstrap.min.css"
+          type="text/css">
+    <link rel="stylesheet" href="../static/theme/bower_components/metisMenu/dist/metisMenu.min.css"
+          type="text/css">
+    <link rel="stylesheet" href="../static/theme/dist/css/timeline.css" type="text/css">
+    <link rel="stylesheet" href="../static/theme/dist/css/sb-admin-2.css" type="text/css">
+    <link rel="stylesheet"
+          href="../static/theme/bower_components/font-awesome/css/font-awesome.min.css"
+          type="text/css">
+</head>
+
+<body>
+<div id="wrapper">
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../index.html">Regular Expression</a>
+        </div>
+        <ul class="nav navbar-top-links navbar-right">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="index.html#">
+                    <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="http://localhost:8080/session/logout/index"><i
+                            class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <a href="../index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="index.html#"><i class="fa fa-book fa-fw"></i> Reference<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="../character/index.html">Character Classes</a>
+                            </li>
+                            <li>
+                                <a href="../anchor/index.html">Anchors</a>
+                            </li>
+                            <li>
+                                <a href="../escape/index.html">Escaped Characters</a>
+                            </li>
+                            <li>
+                                <a href="../groupLookaround/index.html">Groups & Lookaround</a>
+                            </li>
+                            <li>
+                                <a href="index.html">Qualtifiers & Alternation</a>
+                            </li>
+                            <li>
+                                <a href="../substitution/index.html">Substitution</a>
+                            </li>
+                            <li>
+                                <a href="../flags/index.html">Flags</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="index.html#"><i class="fa fa-file-o fa-fw"></i> CheatSheet<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="../cheatSheet/index.html">Regular Expression Syntax</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="../example/index.html">
+                            <i class="fa fa-lightbulb-o fa-fw"></i> Examples<span class="fa arrow"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../regexCheck/testRegexValidation.html">
+                            <i class="fa fa-life-saver fa-fw"></i> Test Regex<span class="fa arrow"></span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#"><i class="fa fa-ambulance fa-fw"></i> Chapter<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="../tutorial/index.html">Regular Expression</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterOne.html">Character Class</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterTwo.html">Predefined Character Class</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterThree.html">Quantifiers</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterFour.html">Capturing Groups</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterFive.html">Boundary Matchers</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterSix.html">Capturing Groups and Character Classes with Quantifiers</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterSeven.html">LookAround</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Quantifiers & Alternation</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> What is Quantifiers & Alternation?
+                </div>
+
+                <div class="panel-body">
+                    Quantifiers indicate that the preceding token must be matched a certain number of times. By default, quantifiers are greedy, and will match as many characters as possible.<br/>
+                    Alternation acts like a boolean OR, matching one sequence or another.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> Quantifiers & Alternation Regex
+                </div>
+
+                <div class="panel-body">
+                    <table class="table table-bordered table-striped">
+                        <tr>
+                            <td><a href="index.html#plus">+</a></td>
+                            <td><a href="index.html#star">*</a></td>
+                            <td><a href="index.html#quantifier">{1,3}</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="index.html#optional">?</a></td>
+                            <td><a href="index.html#lazy">?</a></td>
+                            <td><a href="index.html#alternation">|</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="plus">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> +
+                </div>
+
+                <div class="panel-body">
+                    Matches 1 or more of the preceding token.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="star">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> *
+                </div>
+
+                <div class="panel-body">
+                    Matches 0 or more of the preceding token.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="quantifier">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> {1,3}
+                </div>
+
+                <div class="panel-body">
+                    Matches the specified quantity of the previous token. {1,3} will match 1 to 3. {3} will match exactly 3. {3,} will match 3 or more.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="optional">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> ?
+                </div>
+
+                <div class="panel-body">
+                    Matches 0 or 1 of the preceding token, effectively making it optional.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="lazy">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> ?
+                </div>
+
+                <div class="panel-body">
+                    Makes the preceding quantifier lazy, causing it to match as few characters as possible. By default, quantifiers are greedy, and will match as many characters as possible.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="alternation">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> |
+                </div>
+
+                <div class="panel-body">
+                    Acts like a boolean OR. Matches the expression before or after the |.<br/>
+                    It can operate within a group, or on a whole expression. The patterns will be tested in order.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+<script src="../static/theme/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../static/theme/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../static/theme/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+<script src="../static/theme/bower_components/raphael/raphael-min.js"></script>
+<script src="../static/theme/dist/js/sb-admin-2.js"></script>
+</body>
+</html>

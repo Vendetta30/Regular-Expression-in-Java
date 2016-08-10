@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Introduction to Regular Expression</title>
+    
+    <meta name="layout" content="main"/>
+    
+    <style>
+    .modal-dialog {
+        width: 1200px !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    .modal-content {
+        height: auto;
+        min-height: 100%;
+        border-radius: 0;
+    }
+    </style>
+
+    <link rel="stylesheet"
+          href="../static/theme/bower_components/bootstrap/dist/css/bootstrap.min.css"
+          type="text/css">
+    <link rel="stylesheet" href="../static/theme/bower_components/metisMenu/dist/metisMenu.min.css"
+          type="text/css">
+    <link rel="stylesheet" href="../static/theme/dist/css/timeline.css" type="text/css">
+    <link rel="stylesheet" href="../static/theme/dist/css/sb-admin-2.css" type="text/css">
+    <link rel="stylesheet"
+          href="../static/theme/bower_components/font-awesome/css/font-awesome.min.css"
+          type="text/css">
+</head>
+
+<body>
+<div id="wrapper">
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../index.html">Regular Expression</a>
+        </div>
+        <ul class="nav navbar-top-links navbar-right">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="index.html#">
+                    <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="http://localhost:8080/session/logout/index"><i
+                            class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <a href="../index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="index.html#"><i class="fa fa-book fa-fw"></i> Reference<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="../character/index.html">Character Classes</a>
+                            </li>
+                            <li>
+                                <a href="../anchor/index.html">Anchors</a>
+                            </li>
+                            <li>
+                                <a href="../escape/index.html">Escaped Characters</a>
+                            </li>
+                            <li>
+                                <a href="../groupLookaround/index.html">Groups & Lookaround</a>
+                            </li>
+                            <li>
+                                <a href="../qualtifierAlternation/index.html">Qualtifiers & Alternation</a>
+                            </li>
+                            <li>
+                                <a href="../substitution/index.html">Substitution</a>
+                            </li>
+                            <li>
+                                <a href="../flags/index.html">Flags</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="index.html#"><i class="fa fa-file-o fa-fw"></i> CheatSheet<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="../cheatSheet/index.html">Regular Expression Syntax</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="../example/index.html">
+                            <i class="fa fa-lightbulb-o fa-fw"></i> Examples<span class="fa arrow"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../regexCheck/testRegexValidation.html">
+                            <i class="fa fa-life-saver fa-fw"></i> Test Regex<span class="fa arrow"></span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#"><i class="fa fa-ambulance fa-fw"></i> Chapter<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="index.html">Regular Expression</a>
+                            </li>
+                            <li>
+                                <a href="chapterOne.html">Character Class</a>
+                            </li>
+                            <li>
+                                <a href="chapterTwo.html">Predefined Character Class</a>
+                            </li>
+                            <li>
+                                <a href="chapterThree.html">Quantifiers</a>
+                            </li>
+                            <li>
+                                <a href="chapterFour.html">Capturing Groups</a>
+                            </li>
+                            <li>
+                                <a href="chapterFive.html">Boundary Matchers</a>
+                            </li>
+                            <li>
+                                <a href="chapterSix.html">Capturing Groups and Character Classes with Quantifiers</a>
+                            </li>
+                            <li>
+                                <a href="chapterSeven.html">LookAround</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Regular Expressions</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-question fa-fw"></i> Regex in Java
+                </div>
+
+                <div class="panel-body">
+                    Regular expressions are a way to describe a set of strings based on common characteristics shared by each string in the set.<br/>
+                    The java.util.regex package primarily consists of three classes: Pattern, Matcher, and PatternSyntaxException.<br/>
+                    A <b>Pattern</b> object is a compiled representation of a regular expression.<br/>
+                    A <b>Matcher</b> object is the engine that interprets the pattern and performs match operations against an input string.<br/>
+                    A <b>PatternSyntaxException</b> object is an unchecked exception that indicates a syntax error in a regular expression pattern.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-filter fa-fw"></i> MetaCharacter
+                </div>
+
+                <div class="panel-body">
+                    This API also supports a number of special characters that affect the way a pattern is matched.<br/>
+                    The metacharacters supported by this API are: <([{\^-=$!|]})?*+.><br/>
+                    The characters @ and # never carry a special meaning.
+                    There are two ways to force a metacharacter to be treated as an ordinary character:
+                    <ul>
+                        <li>
+                            precede the metacharacter with a backslash, or
+                        </li>
+                        <li>
+                            enclose it within \Q (which starts the quote) and \E (which ends it).
+                        </li>
+                        <li>
+                            \Q and \E can be placed at any location within the expression, provided that the \Q comes first.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <a href="../index.html" class="btn btn-warning btn-lg">Prev</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                Practice
+            </button>
+
+        </div>
+
+        <div class="col-md-4 text-center">
+            <a href="chapterOne.html"
+               class="btn btn-success btn-lg">Next</a>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Practice Example</h4>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <i class="fa fa-question fa-fw"></i> Example 1
+                                </div>
+
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            Enter your regex: foo<br/>
+                                            Enter input string to search: foo<br/>
+                                            I found the text foo starting at index 0 and ending at index 3.
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            Input string is 3 characters long, the start index is 0 and the end index is 3. <br/>By convention, ranges are inclusive of the beginning index and exclusive of the end index
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <i class="fa fa-question fa-fw"></i> Example 2
+                                </div>
+
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            Enter your regex: foo<br/>
+                                            Enter input string to search: foofoofoo<br/>
+                                            I found the text foo starting at index 0 and ending at index 3.<br/>
+                                            I found the text foo starting at index 3 and ending at index 6.<br/>
+                                            I found the text foo starting at index 6 and ending at index 9.<br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <i class="fa fa-question fa-fw"></i> Example 3 (Metacharacter)
+                                </div>
+
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            Enter your regex: cat.<br/>
+                                            Enter input string to search: cats<br/>
+                                            I found the text cats starting at index 0 and ending at index 4.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+</div>
+
+</div>
+<script src="../static/theme/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../static/theme/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../static/theme/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+<script src="../static/theme/bower_components/raphael/raphael-min.js"></script>
+<script src="../static/theme/dist/js/sb-admin-2.js"></script>
+</body>
+</html>

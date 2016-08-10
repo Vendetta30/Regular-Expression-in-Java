@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Substitution</title>
+    
+    <meta name="layout" content="main"/>
+    
+
+    <link rel="stylesheet"
+          href="../static/theme/bower_components/bootstrap/dist/css/bootstrap.min.css"
+          type="text/css">
+    <link rel="stylesheet" href="../static/theme/bower_components/metisMenu/dist/metisMenu.min.css"
+          type="text/css">
+    <link rel="stylesheet" href="../static/theme/dist/css/timeline.css" type="text/css">
+    <link rel="stylesheet" href="../static/theme/dist/css/sb-admin-2.css" type="text/css">
+    <link rel="stylesheet"
+          href="../static/theme/bower_components/font-awesome/css/font-awesome.min.css"
+          type="text/css">
+</head>
+
+<body>
+<div id="wrapper">
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../index.html">Regular Expression</a>
+        </div>
+        <ul class="nav navbar-top-links navbar-right">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="index.html#">
+                    <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="http://localhost:8080/session/logout/index"><i
+                            class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <a href="../index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="index.html#"><i class="fa fa-book fa-fw"></i> Reference<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="../character/index.html">Character Classes</a>
+                            </li>
+                            <li>
+                                <a href="../anchor/index.html">Anchors</a>
+                            </li>
+                            <li>
+                                <a href="../escape/index.html">Escaped Characters</a>
+                            </li>
+                            <li>
+                                <a href="../groupLookaround/index.html">Groups & Lookaround</a>
+                            </li>
+                            <li>
+                                <a href="../qualtifierAlternation/index.html">Qualtifiers & Alternation</a>
+                            </li>
+                            <li>
+                                <a href="index.html">Substitution</a>
+                            </li>
+                            <li>
+                                <a href="../flags/index.html">Flags</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="index.html#"><i class="fa fa-file-o fa-fw"></i> CheatSheet<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="../cheatSheet/index.html">Regular Expression Syntax</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="../example/index.html">
+                            <i class="fa fa-lightbulb-o fa-fw"></i> Examples<span class="fa arrow"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../regexCheck/testRegexValidation.html">
+                            <i class="fa fa-life-saver fa-fw"></i> Test Regex<span class="fa arrow"></span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#"><i class="fa fa-ambulance fa-fw"></i> Chapter<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="../tutorial/index.html">Regular Expression</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterOne.html">Character Class</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterTwo.html">Predefined Character Class</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterThree.html">Quantifiers</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterFour.html">Capturing Groups</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterFive.html">Boundary Matchers</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterSix.html">Capturing Groups and Character Classes with Quantifiers</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterSeven.html">LookAround</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Substitution</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> What is Substitution?
+                </div>
+
+                <div class="panel-body">
+                    These tokens are used in a substitution string to insert different parts of the match.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> Substitution Regex
+                </div>
+
+                <div class="panel-body">
+                    <table class="table table-bordered table-striped">
+                        <tr>
+                            <td><a href="index.html#match">$&</a></td>
+                            <td><a href="index.html#beforeMatch">$`</a></td>
+                            <td><a href="index.html#afterMatch">$'</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="index.html#capture">$1</a></td>
+                            <td><a href="index.html#escaped">$$</a></td>
+                            <td><a href="index.html#escapedChar">\n</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="match">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> $&
+                </div>
+
+                <div class="panel-body">
+                    Inserts the matched text.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="capture">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> $1
+                </div>
+
+                <div class="panel-body">
+                    Inserts the results of the specified capture group (ex. $3 will insert the third capture group).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="beforeMatch">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> $`
+                </div>
+
+                <div class="panel-body">
+                    Inserts the portion of the source string that precedes the match.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="afterMatch">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> $'
+                </div>
+
+                <div class="panel-body">
+                    Inserts the portion of the source string that follows the match.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="escaped">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> $$
+                </div>
+
+                <div class="panel-body">
+                    Inserts a dollar sign character ($).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="escapedChar">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> \n
+                </div>
+
+                <div class="panel-body">
+                    Escaped characters compatible with the JS string format, such as \n, \t, \x09, & \u0009 are supported in the substitution string.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+<script src="../static/theme/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../static/theme/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../static/theme/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+<script src="../static/theme/bower_components/raphael/raphael-min.js"></script>
+<script src="../static/theme/dist/js/sb-admin-2.js"></script>
+</body>
+</html>

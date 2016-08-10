@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Escape</title>
+    
+    <meta name="layout" content="main"/>
+    
+
+    <link rel="stylesheet"
+          href="../static/theme/bower_components/bootstrap/dist/css/bootstrap.min.css"
+          type="text/css">
+    <link rel="stylesheet" href="../static/theme/bower_components/metisMenu/dist/metisMenu.min.css"
+          type="text/css">
+    <link rel="stylesheet" href="../static/theme/dist/css/timeline.css" type="text/css">
+    <link rel="stylesheet" href="../static/theme/dist/css/sb-admin-2.css" type="text/css">
+    <link rel="stylesheet"
+          href="../static/theme/bower_components/font-awesome/css/font-awesome.min.css"
+          type="text/css">
+</head>
+
+<body>
+<div id="wrapper">
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../index.html">Regular Expression</a>
+        </div>
+        <ul class="nav navbar-top-links navbar-right">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="index.html#">
+                    <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="http://localhost:8080/session/logout/index"><i
+                            class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <a href="../index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="index.html#"><i class="fa fa-book fa-fw"></i> Reference<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="../character/index.html">Character Classes</a>
+                            </li>
+                            <li>
+                                <a href="../anchor/index.html">Anchors</a>
+                            </li>
+                            <li>
+                                <a href="index.html">Escaped Characters</a>
+                            </li>
+                            <li>
+                                <a href="../groupLookaround/index.html">Groups & Lookaround</a>
+                            </li>
+                            <li>
+                                <a href="../qualtifierAlternation/index.html">Qualtifiers & Alternation</a>
+                            </li>
+                            <li>
+                                <a href="../substitution/index.html">Substitution</a>
+                            </li>
+                            <li>
+                                <a href="../flags/index.html">Flags</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="index.html#"><i class="fa fa-file-o fa-fw"></i> CheatSheet<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="../cheatSheet/index.html">Regular Expression Syntax</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="../example/index.html">
+                            <i class="fa fa-lightbulb-o fa-fw"></i> Examples<span class="fa arrow"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../regexCheck/testRegexValidation.html">
+                            <i class="fa fa-life-saver fa-fw"></i> Test Regex<span class="fa arrow"></span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#"><i class="fa fa-ambulance fa-fw"></i> Chapter<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="../tutorial/index.html">Regular Expression</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterOne.html">Character Class</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterTwo.html">Predefined Character Class</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterThree.html">Quantifiers</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterFour.html">Capturing Groups</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterFive.html">Boundary Matchers</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterSix.html">Capturing Groups and Character Classes with Quantifiers</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterSeven.html">LookAround</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Escaped Character</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> What is Escaped Character?
+                </div>
+
+                <div class="panel-body">
+                    Some characters have special meaning in regular expressions and must be escaped. All escaped characters begin with the \ character.
+                    <br/>
+                    Within a character set, only \, -, and ] need to be escaped.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> Escaped Character Regex
+                </div>
+
+                <div class="panel-body">
+                    <table class="table table-bordered table-striped">
+                        <tr>
+                            <td><a href="index.html#octal">\000</a></td>
+                            <td><a href="index.html#hexadecimal">\xFF</a></td>
+                            <td><a href="index.html#unicode">\uFFFF</a></td>
+                            <td><a href="index.html#control">\cI</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="index.html#tab">\t</a></td>
+                            <td><a href="index.html#lineFeed">\n</a></td>
+                            <td><a href="index.html#vertical">\v</a></td>
+                            <td><a href="index.html#formFeed">\f</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="index.html#carriage">\r</a></td>
+                            <td><a href="index.html#null">\0</a></td>
+                            <td><a href="index.html#dot">\.</a></td>
+                            <td><a href="index.html#slash">\\</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="index.html#plus">\+</a></td>
+                            <td><a href="index.html#mul">\*</a></td>
+                            <td><a href="index.html#que">\?</a></td>
+                            <td><a href="index.html#esc">\^</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="index.html#dollar">\$</a></td>
+                            <td><a href="index.html#openBracket">\[</a></td>
+                            <td><a href="index.html#closeBracket">\]</a></td>
+                            <td><a href="index.html#openCurly">\{</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="index.html#closeCurly">\}</a></td>
+                            <td><a href="index.html#openParan">\(</a></td>
+                            <td><a href="index.html#closeParan">\)</a></td>
+                            <td><a href="index.html#pipe">\|{</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="index.html#escape">\/</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="octal">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> Octal Escape
+                </div>
+
+                <div class="panel-body">
+                    Octal escaped character in the form \000. Value must be less than 255 (\377).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="hexadecimal">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> Hexadecimal Escape
+                </div>
+
+                <div class="panel-body">
+                    Hexadecimal escaped character in the form \xFF.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="unicode">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> Unicode Escape
+                </div>
+
+                <div class="panel-body">
+                    Unicode escaped character in the form \uFFFF.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="control">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> Control Character Escape
+                </div>
+
+                <div class="panel-body">
+                    Escaped control character in the form \cZ. This can range from \cA (NULL, char code 0) to \cZ (EM, char code 25).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="tab">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> Tab
+                </div>
+
+                <div class="panel-body">
+                    Matches a TAB character (char code 9).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="lineFeed">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> Line Feed
+                </div>
+
+                <div class="panel-body">
+                    Matches a LINE FEED character (char code 10).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="vertical">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> Vertical Tab
+                </div>
+
+                <div class="panel-body">
+                    Matches a VERTICAL TAB character (char code 11).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="formFeed">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> Form Feed
+                </div>
+
+                <div class="panel-body">
+                    Matches a FORM FEED character (char code 12).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="carriage">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> Carriage Return
+                </div>
+
+                <div class="panel-body">
+                    Matches a CARRIAGE RETURN character (char code 13).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="null">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> null
+                </div>
+
+                <div class="panel-body">
+                    Matches a NULL character (char code 0).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="dot">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> .
+                </div>
+
+                <div class="panel-body">
+                    Matches a "." character (char code 46).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="slash">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> \
+                </div>
+
+                <div class="panel-body">
+                    Matches a "\" character (char code 92).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="plus">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> +
+                </div>
+
+                <div class="panel-body">
+                    Matches a "+" character (char code 43).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="mul">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> *
+                </div>
+
+                <div class="panel-body">
+                    Matches a "*" character (char code 42).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="que">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> ?
+                </div>
+
+                <div class="panel-body">
+                    Matches a "?" character (char code 63).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="esc">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> ^
+                </div>
+
+                <div class="panel-body">
+                    Matches a "^" character (char code 94).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="dollar">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> $
+                </div>
+
+                <div class="panel-body">
+                    Matches a "$" character (char code 36).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="openBracket">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> [
+                </div>
+
+                <div class="panel-body">
+                    Matches a "[" character (char code 91).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="closeBracket">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> ]
+                </div>
+
+                <div class="panel-body">
+                    Matches a "]" character (char code 93).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="openCurly">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> {
+                </div>
+
+                <div class="panel-body">
+                    Matches a "{" character (char code 123).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="closeCurly">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> }
+                </div>
+
+                <div class="panel-body">
+                    Matches a "}" character (char code 125).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="openParan">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> (
+                </div>
+
+                <div class="panel-body">
+                    Matches a "(" character (char code 40).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="closeParan">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> )
+                </div>
+
+                <div class="panel-body">
+                    Matches a ")" character (char code 41).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="pipe">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> |
+                </div>
+
+                <div class="panel-body">
+                    Matches a "|" character (char code 124).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="escape">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> /
+                </div>
+
+                <div class="panel-body">
+                    Matches a "/" character (char code 47).
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+<script src="../static/theme/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../static/theme/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../static/theme/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+<script src="../static/theme/bower_components/raphael/raphael-min.js"></script>
+<script src="../static/theme/dist/js/sb-admin-2.js"></script>
+</body>
+</html>

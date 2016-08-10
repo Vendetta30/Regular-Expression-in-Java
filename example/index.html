@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Examples</title>
+    
+    <meta name="layout" content="main"/>
+    
+
+    <link rel="stylesheet"
+          href="../static/theme/bower_components/bootstrap/dist/css/bootstrap.min.css"
+          type="text/css">
+    <link rel="stylesheet" href="../static/theme/bower_components/metisMenu/dist/metisMenu.min.css"
+          type="text/css">
+    <link rel="stylesheet" href="../static/theme/dist/css/timeline.css" type="text/css">
+    <link rel="stylesheet" href="../static/theme/dist/css/sb-admin-2.css" type="text/css">
+    <link rel="stylesheet"
+          href="../static/theme/bower_components/font-awesome/css/font-awesome.min.css"
+          type="text/css">
+</head>
+
+<body>
+<div id="wrapper">
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../index.html">Regular Expression</a>
+        </div>
+        <ul class="nav navbar-top-links navbar-right">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="index.html#">
+                    <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="http://localhost:8080/session/logout/index"><i
+                            class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <a href="../index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="index.html#"><i class="fa fa-book fa-fw"></i> Reference<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="../character/index.html">Character Classes</a>
+                            </li>
+                            <li>
+                                <a href="../anchor/index.html">Anchors</a>
+                            </li>
+                            <li>
+                                <a href="../escape/index.html">Escaped Characters</a>
+                            </li>
+                            <li>
+                                <a href="../groupLookaround/index.html">Groups & Lookaround</a>
+                            </li>
+                            <li>
+                                <a href="../qualtifierAlternation/index.html">Qualtifiers & Alternation</a>
+                            </li>
+                            <li>
+                                <a href="../substitution/index.html">Substitution</a>
+                            </li>
+                            <li>
+                                <a href="../flags/index.html">Flags</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="index.html#"><i class="fa fa-file-o fa-fw"></i> CheatSheet<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="../cheatSheet/index.html">Regular Expression Syntax</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="index.html">
+                            <i class="fa fa-lightbulb-o fa-fw"></i> Examples<span class="fa arrow"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../regexCheck/testRegexValidation.html">
+                            <i class="fa fa-life-saver fa-fw"></i> Test Regex<span class="fa arrow"></span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#"><i class="fa fa-ambulance fa-fw"></i> Chapter<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="../tutorial/index.html">Regular Expression</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterOne.html">Character Class</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterTwo.html">Predefined Character Class</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterThree.html">Quantifiers</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterFour.html">Capturing Groups</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterFive.html">Boundary Matchers</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterSix.html">Capturing Groups and Character Classes with Quantifiers</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterSeven.html">LookAround</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Example</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Regex Example
+                </div>
+
+                <div class="panel-body">
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion"
+                                       href="index.html#exampleOne">Integer & Decimal Numbers</a>
+                                </h4>
+                            </div>
+
+                            <div id="exampleOne" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    (?:\d*\.)?\d+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion"
+                                       href="index.html#exampleTwo">Test Testing</a>
+                                </h4>
+                            </div>
+
+                            <div id="exampleTwo" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    \btest(er|ing|ed|s)?\b
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion"
+                                       href="index.html#exampleThree">Phone Number</a>
+                                </h4>
+                            </div>
+
+                            <div id="exampleThree" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    \b\d{3}[-.]?\d{3}[-.]?\d{4}\b
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion"
+                                       href="index.html#exampleFour">Words</a>
+                                </h4>
+                            </div>
+
+                            <div id="exampleFour" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    [a-zA-Z]+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion"
+                                       href="index.html#exampleFive">24 or 32 bit colors</a>
+                                </h4>
+                            </div>
+
+                            <div id="exampleFive" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    (?:#|0x)?(?:[0-9A-F]{2}){3,4}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion"
+                                       href="index.html#exampleSix">4 letters words</a>
+                                </h4>
+                            </div>
+
+                            <div id="exampleSix" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    \b\w{4}\b
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion"
+                                       href="index.html#exampleSeven">2-5 letters Palindrome</a>
+                                </h4>
+                            </div>
+
+                            <div id="exampleSeven" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    \b(\w)?(\w)\w?\2\1
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion"
+                                       href="index.html#exampleEight">Username</a>
+                                </h4>
+                            </div>
+
+                            <div id="exampleEight" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="col-md-4">
+                                        ^[a-z0-9_-]{3,15}$
+                                    </div>
+
+                                    <div class="col-md-8">
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <td>^</td>
+                                                <td>Start of the line</td>
+                                            </tr>
+                                            <tr>
+                                                <td>[a-z0-9_-]</td>
+                                                <td>Match characters and symbols in the list, a-z, 0-9 , underscore , hyphen</td>
+                                            </tr>
+                                            <tr>
+                                                <td>{3,15}</td>
+                                                <td>Length at least 3 characters and maximum length of 15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>$</td>
+                                                <td>End of the line</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion"
+                                       href="index.html#exampleNine">Password</a>
+                                </h4>
+                            </div>
+
+                            <div id="exampleNine" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="col-md-4">
+                                        ((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})
+                                    </div>
+
+                                    <div class="col-md-8">
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <td>
+                                                    (
+                                                </td>
+                                                <td>
+                                                    Start of group
+                                                </td>
+                                            </tr><tr>
+                                            <td>
+                                                (?=.*\d)
+                                            </td>
+                                            <td>
+                                                must contains one digit from 0-9
+                                            </td>
+                                        </tr><tr>
+                                            <td>
+                                                (?=.*[a-z])
+                                            </td>
+                                            <td>
+                                                must contains one lowercase characters
+                                            </td>
+                                        </tr>
+                                            <tr>
+                                                <td>
+                                                    (?=.*[A-Z])
+                                                </td>
+                                                <td>
+                                                    must contains one uppercase characters
+                                                </td>
+                                            </tr><tr>
+                                            <td>
+                                                (?=.*[@#$%])
+                                            </td>
+                                            <td>
+                                                must contains one special symbols in the list "@#$%"
+                                            </td>
+                                        </tr>
+                                            <tr>
+                                                <td>
+                                                    .
+                                                </td>
+                                                <td>
+                                                    match anything with previous condition checking
+                                                </td>
+                                            </tr><tr>
+                                            <td>
+                                                {6,20}
+                                            </td>
+                                            <td>
+                                                length at least 6 characters and maximum of 20
+                                            </td>
+                                        </tr><tr>
+                                            <td>
+                                                )
+                                            </td>
+                                            <td>
+                                                End of group
+                                            </td>
+                                        </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion"
+                                       href="index.html#exampleTen">HexaDecimal Color Code</a>
+                                </h4>
+                            </div>
+
+                            <div id="exampleTen" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="col-md-4">
+                                        ^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+                                    </div>
+
+                                    <div class="col-md-8">
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <td>
+                                                    ^
+                                                </td>
+                                                <td>
+                                                    start of the line
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    #
+                                                </td>
+                                                <td>
+                                                    must contains a "#" symbols
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    (
+                                                </td>
+                                                <td>
+                                                    start of group #1
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    [A-Fa-f0-9]{6}
+                                                </td>
+                                                <td>
+                                                    any strings in the list, with length of 6
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    |
+                                                </td>
+                                                <td>
+                                                    or
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    [A-Fa-f0-9]{3}
+                                                </td>
+                                                <td>
+                                                    any strings in the list, with length of 3
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    )
+                                                </td>
+                                                <td>
+                                                    end of group #1
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    $
+                                                </td>
+                                                <td>
+                                                    End of line
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion"
+                                       href="index.html#exampleEleven">Email</a>
+                                </h4>
+                            </div>
+
+                            <div id="exampleEleven" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="col-md-4">
+                                        ^[_A-Za-z0-9-]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$
+                                    </div>
+
+                                    <div class="col-md-8">
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <td>
+                                                    ^
+                                                </td>
+                                                <td>
+                                                    start of the line
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    [_A-Za-z0-9-]+
+                                                </td>
+                                                <td>
+                                                    must start with string in the bracket [ ], must contains one or more (+)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    (
+                                                </td>
+                                                <td>
+                                                    start of group #1
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    \.[_A-Za-z0-9-]+
+                                                </td>
+                                                <td>
+                                                    follow by a dot "." and string in the bracket [ ], must contains one or more (+)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    )*
+                                                </td>
+                                                <td>
+                                                    end of group #1, this group is optional (*)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    @
+                                                </td>
+                                                <td>
+                                                    must contains a "@" symbol
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    [A-Za-z0-9]+
+                                                </td>
+                                                <td>
+                                                    follow by string in the bracket [ ], must contains one or more (+)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    (
+                                                </td>
+                                                <td>
+                                                    start of group #2 - first level TLD checking
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    \.[A-Za-z0-9]+
+                                                </td>
+                                                <td>
+                                                    follow by a dot "." and string in the bracket [ ], must contains one or more (+)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    )*
+                                                </td>
+                                                <td>
+                                                    end of group #2, this group is optional (*)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    (
+                                                </td>
+                                                <td>
+                                                    start of group #3 - second level TLD checking
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    \.[A-Za-z]{2,}
+                                                </td>
+                                                <td>
+                                                    follow by a dot "." and string in the bracket [ ], with minimum length of 2
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    )
+                                                </td>
+                                                <td>
+                                                    end of group #3
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    $
+                                                </td>
+                                                <td>
+                                                    end of line
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion"
+                                       href="index.html#exampleTwelve">Image File Extension</a>
+                                </h4>
+                            </div>
+
+                            <div id="exampleTwelve" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="col-md-4">
+                                        ([^\s]+(\.(?i)(jpg|png|gif|bmp))$)
+                                    </div>
+
+                                    <div class="col-md-8">
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <td>
+                                                    (
+                                                </td>
+                                                <td>
+                                                    Start of the group #1
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    [^\s]+
+                                                </td>
+                                                <td>
+                                                    must contains one or more anything (except white space)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    (
+                                                </td>
+                                                <td>
+                                                    start of the group #2
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    \.
+                                                </td>
+                                                <td>
+                                                    follow by a dot "."
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    (?i)
+                                                </td>
+                                                <td>
+                                                    ignore the case sensitive checking
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    (
+                                                </td>
+                                                <td>
+                                                    start of the group #3
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    jpg
+                                                </td>
+                                                <td>
+                                                    contains characters "jpg"
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    |
+                                                </td>
+                                                <td>
+                                                    or
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    png
+                                                </td>
+                                                <td>
+                                                    contains characters "png"
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    |
+                                                </td>
+                                                <td>
+                                                    or
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    gif
+                                                </td>
+                                                <td>
+                                                    contains characters "gif"
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    |
+                                                </td>
+                                                <td>
+                                                    or
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    bmp
+                                                </td>
+                                                <td>
+                                                    contains characters "bmp"
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    )
+                                                </td>
+                                                <td>
+                                                    end of the group #3
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    )
+                                                </td>
+                                                <td>
+                                                    end of the group #2
+                                                </td>
+                                            </tr><tr>
+                                            <td>
+                                                $
+                                            </td>
+                                            <td>
+                                                end of the string
+                                            </td>
+                                        </tr><tr>
+                                            <td>
+                                                )
+                                            </td>
+                                            <td>
+                                                end of the group #1
+                                            </td>
+                                        </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion"
+                                       href="index.html#exampleThirteen">IP Address</a>
+                                </h4>
+                            </div>
+
+                            <div id="exampleThirteen" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="col-md-4">
+                                        ^([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])$
+                                    </div>
+
+                                    <div class="col-md-8">
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <td>
+                                                    ^
+                                                </td>
+                                                <td>
+                                                    start of the line
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    (
+                                                </td>
+                                                <td>
+                                                    start of group #1
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    [01]?\\d\\d?
+                                                </td>
+                                                <td>
+                                                    Can be one or two digits. If three digits appear, it must start either 0 or 1
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    |
+                                                </td>
+                                                <td>
+                                                    or
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    2[0-4]\\d
+                                                </td>
+                                                <td>
+                                                    start with 2, follow by 0-4 and end with any digit (2[0-4][0-9])
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    |
+                                                </td>
+                                                <td>
+                                                    or
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    25[0-5]
+                                                </td>
+                                                <td>
+                                                    start with 2, follow by 5 and end with 0-5 (25[0-5])
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    )
+                                                </td>
+                                                <td>
+                                                    end of group #2
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    \.
+                                                </td>
+                                                <td>
+                                                    follow by a dot "."
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    ....
+                                                </td>
+                                                <td>
+                                                    repeat with 3 time (3x)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    $
+                                                </td>
+                                                <td>
+                                                    end of the line
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion"
+                                       href="index.html#exampleFourteen">Time Format</a>
+                                </h4>
+                            </div>
+
+                            <div id="exampleFourteen" class="panel-collapse collapse">
+                                <div class="panel-group" id="accordion1">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion1"
+                                                   href="index.html#exampleTwentyOne">12 Hours Format</a>
+                                            </h4>
+                                        </div>
+
+                                        <div id="exampleTwentyOne" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="col-md-4">
+                                                    (1[012]|[1-9]):[0-5][0-9](\\s)?(?i)(am|pm)
+                                                </div>
+
+                                                <div class="col-md-8">
+                                                    <table class="table table-striped">
+                                                        <tr>
+                                                            <td>(</td>
+                                                            <td>start of group #1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>1[012]</td>
+                                                            <td>start with 10, 11, 12</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>|</td>
+                                                            <td>or</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>[1-9]</td>
+                                                            <td>start with 1,2,...9</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>)</td>
+                                                            <td>end of group #1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>:</td>
+                                                            <td>follow by a semi colon (:)</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>[0-5][0-9]</td>
+                                                            <td>follow by 0..5 and 0..9, which means 00 to 59</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>(\\s)?</td>
+                                                            <td>follow by a white space (optional)</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>(?i)</td>
+                                                            <td>next checking is case insensitive</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>(am|pm)</td>
+                                                            <td>follow by am or pm</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="panel panel-success">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion1"
+                                                   href="index.html#exampleTwentyTwo">24 Hours Format</a>
+                                            </h4>
+                                        </div>
+
+                                        <div id="exampleTwentyTwo" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="col-md-4">
+                                                    ([01]?[0-9]|2[0-3]):[0-5][0-9]
+                                                </div>
+
+                                                <div class="col-md-8">
+                                                    <table class="table table-striped">
+                                                        <tr>
+                                                            <td>(</td>
+                                                            <td>start of group #1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>[01]?[0-9]</td>
+                                                            <td>start with 0-9,1-9,00-09,10-19</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>|</td>
+                                                            <td>or</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2[0-3]</td>
+                                                            <td>start with 20-23</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>)</td>
+                                                            <td>end of group #1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>:</td>
+                                                            <td>follow by a semi colon (:)</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>[0-5][0-9]</td>
+                                                            <td>follow by 0..5 and 0..9, which means 00 to 59</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion"
+                                       href="index.html#exampleFifteen">Date Format</a>
+                                </h4>
+                            </div>
+
+                            <div id="exampleFifteen" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="col-md-4">
+                                        (0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\\d\\d)
+                                    </div>
+
+                                    <div class="col-md-8">
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <td>(</td>
+                                                <td>start of group #1</td>
+                                            </tr>
+                                            <tr>
+                                                <td>0?[1-9]</td>
+                                                <td>01-09 or 1-9</td>
+                                            </tr>
+                                            <tr>
+                                                <td>|</td>
+                                                <td>or</td>
+                                            </tr>
+                                            <tr>
+                                                <td>[12][0-9]</td>
+                                                <td>10-19 or 20-29</td>
+                                            </tr>
+                                            <tr>
+                                                <td>|</td>
+                                                <td>or</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3[01]</td>
+                                                <td>30, 31</td>
+                                            </tr>
+                                            <tr>
+                                                <td>)</td>
+                                                <td>end of group #1</td>
+                                            </tr>
+                                            <tr>
+                                                <td>/</td>
+                                                <td>follow by a "/"</td>
+                                            </tr>
+                                            <tr>
+                                                <td>(</td>
+                                                <td>start of group #2</td>
+                                            </tr>
+                                            <tr>
+                                                <td>0?[1-9]</td>
+                                                <td>01-09 or 1-9</td>
+                                            </tr>
+                                            <tr>
+                                                <td>|</td>
+                                                <td>or</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1[012]</td>
+                                                <td>10,11,12</td>
+                                            </tr>
+                                            <tr>
+                                                <td>/</td>
+                                                <td>follow by a "/"</td>
+                                            </tr>
+                                            <tr>
+                                                <td>(</td>
+                                                <td>start of group #3</td>
+                                            </tr>
+                                            <tr>
+                                                <td>(19|20)\\d\\d</td>
+                                                <td>19[0-9][0-9] or 20[0-9][0-9]</td>
+                                            </tr>
+                                            <tr>
+                                                <td>)</td>
+                                                <td>end of group #3</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion"
+                                       href="index.html#exampleSixteen">HTML Tag</a>
+                                </h4>
+                            </div>
+
+                            <div id="exampleSixteen" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="col-md-4">
+                                        &lt;("[^"]*"|'[^']*'|[^'"&gt;])*&gt;
+                                    </div>
+
+                                    <div class="col-md-8">
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <td>
+                                                    &lt;
+                                                </td>
+                                                <td>
+                                                    start with opening tag "&lt;"
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    (
+                                                </td>
+                                                <td>
+                                                    start of group #1
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    "[^"]*"
+                                                </td>
+                                                <td>
+                                                    only two double quotes are allow - "string"
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    |
+                                                </td>
+                                                <td>
+                                                    or
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    '[^']*'
+                                                </td>
+                                                <td>
+                                                    only two single quotes are allow - 'string'
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    |
+                                                </td>
+                                                <td>
+                                                    or
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    [^'"&gt;]
+                                                </td>
+                                                <td>
+                                                    cant contains one single quotes, double quotes and "&gt;"
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    )
+                                                </td>
+                                                <td>
+                                                    end of group #1
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    *
+                                                </td>
+                                                <td>
+                                                    0 or more
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    &gt;
+                                                </td>
+                                                <td>
+                                                    end with closing tag "&gt;"
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion"
+                                       href="index.html#exampleSeventeen">HTML Links</a>
+                                </h4>
+                            </div>
+
+                            <div id="exampleSeventeen" class="panel-collapse collapse">
+                                <div class="panel-group" id="accordion2">
+                                    <div class="panel panel-success">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion2"
+                                                   href="index.html#exampleTwentyThree">HTML A tag</a>
+                                            </h4>
+                                        </div>
+
+                                        <div id="exampleTwentyThree" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="col-md-4">
+                                                    (?i)&lt;a([^&gt;]+)&gt;(.+?)&lt;/a&gt;
+                                                </div>
+
+                                                <div class="col-md-8">
+                                                    <table class="table table-striped">
+                                                        <tr>
+                                                            <td>(</td>
+                                                            <td>start of group #1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>?i</td>
+                                                            <td>all checking are case insensive</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>)</td>
+                                                            <td>end of group #1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>&lt;a</td>
+                                                            <td>start with "&lt;a"</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>(</td>
+                                                            <td>start of group #2</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>[^>]+</td>
+                                                            <td>anything except ("&gt;"), at least one character</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>)</td>
+                                                            <td>end of group #2</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>></td>
+                                                            <td>follow by "&gt;"</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>(.+?)</td>
+                                                            <td>match anything</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>&lt;/a&gt;</td>
+                                                            <td>end with "&lt;/a&gt;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>(?i)</td>
+                                                            <td>next checking is case insensitive</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>(am|pm)</td>
+                                                            <td>follow by am or pm</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion2"
+                                                   href="index.html#exampleTwentyFour">Extract HTML link</a>
+                                            </h4>
+                                        </div>
+
+                                        <div id="exampleTwentyFour" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="col-md-4">
+                                                    \s*(?i)href\s*=\s*(\"([^"]*\")|'[^']*'|([^'"&gt;\s]+));
+                                                </div>
+
+                                                <div class="col-md-8">
+                                                    <table class="table table-striped">
+                                                        <tr>
+                                                            <td>\s*</td>
+                                                            <td>can start with whitespace</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>(?i)</td>
+                                                            <td>all checking are case insensive</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>href</td>
+                                                            <td>follow by "href" word</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>\s*=\s*</td>
+                                                            <td>allows spaces on either side of the equal sign,</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>(</td>
+                                                            <td>start of group #1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>"([^"]*")</td>
+                                                            <td>only two double quotes are allow - "string"</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>|</td>
+                                                            <td>or</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>'[^']*'</td>
+                                                            <td>only two single quotes are allow - 'string'</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>|</td>
+                                                            <td>or</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>([^'"&gt;]+)</td>
+                                                            <td>cant contains one single / double quotes and "&gt;"</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>)</td>
+                                                            <td>end of group #1</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion"
+                                       href="index.html#exampleTwenty">Find Duplicate Words</a>
+                                </h4>
+                            </div>
+
+                            <div id="exampleTwenty" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    \b(\w+)\s+\1\b
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+<script src="../static/theme/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../static/theme/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../static/theme/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+<script src="../static/theme/bower_components/raphael/raphael-min.js"></script>
+<script src="../static/theme/dist/js/sb-admin-2.js"></script>
+</body>
+</html>

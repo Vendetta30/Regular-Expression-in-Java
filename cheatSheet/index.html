@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CheatSheet</title>
+    
+    <meta name="layout" content="main"/>
+    
+
+    <link rel="stylesheet"
+          href="../static/theme/bower_components/bootstrap/dist/css/bootstrap.min.css"
+          type="text/css">
+    <link rel="stylesheet" href="../static/theme/bower_components/metisMenu/dist/metisMenu.min.css"
+          type="text/css">
+    <link rel="stylesheet" href="../static/theme/dist/css/timeline.css" type="text/css">
+    <link rel="stylesheet" href="../static/theme/dist/css/sb-admin-2.css" type="text/css">
+    <link rel="stylesheet"
+          href="../static/theme/bower_components/font-awesome/css/font-awesome.min.css"
+          type="text/css">
+</head>
+
+<body>
+<div id="wrapper">
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../index.html">Regular Expression</a>
+        </div>
+        <ul class="nav navbar-top-links navbar-right">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="index.html#">
+                    <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="http://localhost:8080/session/logout/index"><i
+                            class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <a href="../index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="index.html#"><i class="fa fa-book fa-fw"></i> Reference<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="../character/index.html">Character Classes</a>
+                            </li>
+                            <li>
+                                <a href="../anchor/index.html">Anchors</a>
+                            </li>
+                            <li>
+                                <a href="../escape/index.html">Escaped Characters</a>
+                            </li>
+                            <li>
+                                <a href="../groupLookaround/index.html">Groups & Lookaround</a>
+                            </li>
+                            <li>
+                                <a href="../qualtifierAlternation/index.html">Qualtifiers & Alternation</a>
+                            </li>
+                            <li>
+                                <a href="../substitution/index.html">Substitution</a>
+                            </li>
+                            <li>
+                                <a href="../flags/index.html">Flags</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="index.html#"><i class="fa fa-file-o fa-fw"></i> CheatSheet<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="index.html">Regular Expression Syntax</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="../example/index.html">
+                            <i class="fa fa-lightbulb-o fa-fw"></i> Examples<span class="fa arrow"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../regexCheck/testRegexValidation.html">
+                            <i class="fa fa-life-saver fa-fw"></i> Test Regex<span class="fa arrow"></span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#"><i class="fa fa-ambulance fa-fw"></i> Chapter<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="../tutorial/index.html">Regular Expression</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterOne.html">Character Class</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterTwo.html">Predefined Character Class</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterThree.html">Quantifiers</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterFour.html">Capturing Groups</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterFive.html">Boundary Matchers</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterSix.html">Capturing Groups and Character Classes with Quantifiers</a>
+                            </li>
+                            <li>
+                                <a href="../tutorial/chapterSeven.html">LookAround</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">CheatSheet</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bell fa-fw"></i> Regex Character Class
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-bordered table-striped">
+                                <tr>
+                                    <th>Subexpression</th><th>Matches</th></tr>
+                                <tr>
+                                    <td>^</td>
+                                    <td>Matches beginning of line.</td>
+                                </tr>
+                                <tr>
+                                    <td>$</td>
+                                    <td>Matches end of line.</td>
+                                </tr>
+                                <tr>
+                                    <td>.</td>
+                                    <td>Matches any single character except newline. Using m option allows it to match
+                                    newline as well.</td>
+                                </tr>
+                                <tr>
+                                    <td>[...]</td>
+                                    <td>Matches any single character in brackets.</td>
+                                </tr>
+                                <tr>
+                                    <td>[^...]</td>
+                                    <td>Matches any single character not in brackets</td>
+                                </tr>
+                                <tr>
+                                    <td>[a-g]</td>
+                                    <td>Any character between a and g</td>
+                                </tr>
+                                <tr>
+                                    <td>\A</td>
+                                    <td>Beginning of entire string</td>
+                                </tr>
+                                <tr>
+                                    <td>\z</td>
+                                    <td>End of entire string</td>
+                                </tr>
+                                <tr>
+                                    <td>\Z</td>
+                                    <td>End of entire string except allowable final line terminator.</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bell fa-fw"></i> Regex Quantifier
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-bordered table-striped">
+                                <tr>
+                                    <td>re*</td>
+                                    <td>Matches 0 or more occurrences of preceding expression.</td>
+                                </tr>
+                                <tr>
+                                    <td>re+</td>
+                                    <td>Matches 1 or more of the previous thing</td>
+                                </tr>
+                                <tr>
+                                    <td>re?</td>
+                                    <td>Matches 0 or 1 occurrence of preceding expression.</td>
+                                </tr>
+                                <tr>
+                                    <td>re{ n}</td>
+                                    <td>Matches exactly n number of occurrences of preceding expression.</td>
+                                </tr>
+                                <tr>
+                                    <td>re{ n,}</td>
+                                    <td>Matches n or more occurrences of preceding expression.</td>
+                                </tr>
+                                <tr>
+                                    <td>re{ n, m}</td>
+                                    <td>Matches at least n and at most m occurrences of preceding expression.</td>
+                                </tr>
+                                <tr>
+                                    <td>a| b</td>
+                                    <td>Matches either a or b.</td>
+                                </tr>
+                                <tr>
+                                    <td>(re)</td>
+                                    <td>Groups regular expressions and remembers matched text.</td>
+                                </tr>
+                                <tr>
+                                    <td>(?: re)</td>
+                                    <td>Groups regular expressions without remembering matched text.</td>
+                                </tr>
+                                <tr>
+                                    <td>(?&gt; re)</td>
+                                    <td>Matches independent pattern without backtracking.</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bell fa-fw"></i> Regex MetaCharacter
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-bordered table-striped">
+                                <tr>
+                                    <th>Subexpression</th><th>Matches</th></tr>
+                                <tr>
+                                    <td>.</td>
+                                    <td>Matches any single character except newline. Using m option allows it to match
+                                    newline as well.</td>
+                                </tr>
+                                <tr>
+                                    <td>\w</td>
+                                    <td>Matches word characters.</td>
+                                </tr>
+                                <tr>
+                                    <td>\W</td>
+                                    <td>Matches nonword characters.</td>
+                                </tr>
+                                <tr>
+                                    <td>\s</td>
+                                    <td>Matches whitespace. Equivalent to [\t\n\r\f].</td>
+                                </tr>
+                                <tr>
+                                    <td>\S</td>
+                                    <td>Matches nonwhitespace.</td>
+                                </tr>
+                                <tr>
+                                    <td>\S+</td>
+                                    <td>Several non-whitespace characters/entry</td>
+                                </tr>
+                                <tr>
+                                    <td>\d</td>
+                                    <td>Matches digits. Equivalent to [0-9].</td>
+                                </tr>
+                                <tr>
+                                    <td>\D</td>
+                                    <td>Matches nondigits.</td>
+                                </tr>
+                                <tr>
+                                    <td>\G</td>
+                                    <td>Matches point where last match finished.</td>
+                                </tr>
+                                <tr>
+                                    <td>\n</td>
+                                    <td>Back-reference to capture group number "n"</td>
+                                </tr>
+                                <tr>
+                                    <td>\b</td>
+                                    <td>Matches word boundaries when outside brackets. Matches backspace (0x08) when inside brackets.</td>
+                                </tr>
+                                <tr>
+                                    <td>\B</td>
+                                    <td>Matches nonword boundaries.</td>
+                                </tr>
+                                <tr>
+                                    <td>\n, \t, etc.</td>
+                                    <td>Matches newlines, carriage returns, tabs, etc.</td>
+                                </tr>
+                                <tr>
+                                    <td>\Q</td>
+                                    <td>Escape (quote) all characters up to \E</td>
+                                </tr>
+                                <tr>
+                                    <td>\E</td>
+                                    <td>Ends quoting begun with \Q</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bell fa-fw"></i> Escaped Character
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>RegularExpression</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>\. \* \\</td>
+                                    <td>escaped special characters</td>
+                                </tr>
+                                <tr>
+                                    <td>\t \n \r</td>
+                                    <td>tab, linefeed, carriage return</td>
+                                </tr>
+                                <tr>
+                                    <td>\u00A9</td>
+                                    <td>unicode escaped ©</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bell fa-fw"></i> Group & Lookaround
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>RegularExpression</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>(abc)</td>
+                                    <td>capture group</td>
+                                </tr>
+                                <tr>
+                                    <td>\1</td>
+                                    <td>backreference to group #1</td>
+                                </tr>
+                                <tr>
+                                    <td>(?:abc)</td>
+                                    <td>non-capturing group</td>
+                                </tr>
+                                <tr>
+                                    <td>(?=abc)</td>
+                                    <td>positive lookahead</td>
+                                </tr>
+                                <tr>
+                                    <td>(?!abc)</td>
+                                    <td>negative lookahead</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bell fa-fw"></i> Common matching symbols
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>RegularExpression</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>^regex</td>
+                                    <td>Finds regex that must match at the beginning of the line.</td>
+                                </tr>
+                                <tr>
+                                    <td>regex$</td>
+                                    <td>Finds regex that must match at the end of the line.</td>
+                                </tr>
+                                <tr>
+                                    <td>[abc]</td>
+                                    <td>Set definition, can match the letter a or b or c.</td>
+                                </tr>
+                                <tr>
+                                    <td>[abc][vz]</td>
+                                    <td>Set definition, can match a or b or c followed by either v or z.</td>
+                                </tr><tr>
+                                    <td>[^abc]</td>
+                                    <td>When a caret appears as the first character inside square brackets, it negates the pattern. This pattern matches any character except a or b or c.</td>
+                                </tr>
+                                <tr>
+                                    <td>[a-d1-7]</td>
+                                    <td>Ranges: matches a letter between a and d and figures from 1 to 7, but not d1.</td>
+                                </tr>
+                                <tr>
+                                    <td>a+? a{2,}?</td>
+                                    <td>Match as few as possible</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+<script src="../static/theme/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../static/theme/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../static/theme/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+<script src="../static/theme/bower_components/raphael/raphael-min.js"></script>
+<script src="../static/theme/dist/js/sb-admin-2.js"></script>
+</body>
+</html>
